@@ -1,0 +1,11 @@
+.DS_Store
+obj/
+bin/
+Properties/PublishProfiles/
+Migrations/
+.docker*
+.Docker*
+*.sql
+appsettings.json
+.vs/
+

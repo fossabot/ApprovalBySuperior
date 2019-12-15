@@ -1,0 +1,16 @@
+version: '3'
+services:
+  app:
+    build: .
+    ports:
+      - 5001:5001
+    volumes:
+      - .:/app
+    container_name: apprval_sim
+    command: ["dotnet","watch","run"]
+    networks:
+      - sim-network
+
+networks:
+  sim-network:
+     external: true

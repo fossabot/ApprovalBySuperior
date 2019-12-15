@@ -1,0 +1,48 @@
+@model ApprovalBySuperior.Models.Users
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Users</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Username)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Username)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Positionname)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Positionname)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Depname)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Depname)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Groupname)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Groupname)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Userid">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

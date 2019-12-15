@@ -1,0 +1,61 @@
+@model ApprovalBySuperior.Models.Users
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<h4>Users</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Userid" class="control-label"></label>
+                <input asp-for="Userid" class="form-control" />
+                <span asp-validation-for="Userid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Username" class="control-label"></label>
+                <input asp-for="Username" class="form-control" />
+                <span asp-validation-for="Username" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Users_position" class="control-label"></label>
+                <select asp-for="Users_position" asp-items="ViewBag.Opts1" class="form-control">
+                    <option>役職名を選択</option>
+                </select>
+                <span asp-validation-for="Users_position" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Users_depname" class="control-label"></label>
+                <select asp-for="Users_depname" asp-items="ViewBag.Opts2" class="form-control">
+                    <option>部署名を選択</option>
+                </select>
+                <span asp-validation-for="Users_depname" class="text-danger"></span>
+            </div>
+
+            <partial name="_PosiDepList" />
+
+            <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,9 @@
+﻿{
+  "name": "Knockout",
+  "private": true,
+  "dependencies": {
+    "knockout": "^3.3.0"
+  },
+  "exportsOverride": {
+  }
+}
