@@ -1,18 +1,16 @@
-﻿using Microsoft.Extensions.PlatformAbstractions;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using ApprovalBySuperior.Models;
 
 
-namespace ApprovalBySuperior.Models
+namespace ApprovalBySuperior
 {
     public class MyContext : DbContext
     {
-        public MyContext(DbContextOptions<MyContext> options)
-            : base(options)
-        { }
+        public MyContext(DbContextOptions<MyContext> options) : base(options)
+        {}
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-        }
+        {}
 
         public DbSet<Users> Users { get; set; }
         public DbSet<Positions> Positions { get; set; }
@@ -30,7 +28,6 @@ namespace ApprovalBySuperior.Models
                         .HasMany(p => p.Users)
                         .WithOne(u => u.Positions)
                         .IsRequired();*/
-
 
             // configures one-to-many(Departments-to-Users) relationship
             //１つの部署には複数のユーザが所属している
